@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>E-Vote 16</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1 th:text="#{home.title}"></h1>
+		<p th:text="#{home.p1}"></p>
+		<p th:text="#{home.p2}"></p>
+	    <form action="#" th:action="home" th:object="${dataBean}" method="post">
+        	<p><input type="submit" th:value="#{home.input_value}" /></p>
+    	</form>
+    	<p><a th:text="#{home.link}" href="/results"></a></p>
+	</body>
+</html>

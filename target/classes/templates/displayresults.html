@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title th:text="#{display.title}"></title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1 th:text="#{display.h1}"></h1>
+		<h3 th:text="#{display.h3}"></h3>
+		<ul th:object="${dataBean}">
+			<li th:each="item: ${elected}" th:text="${item}"></li>
+		</ul>
+    	<p><a th:text="#{display.link}" href="/home"></a></p>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title th:text="#{results.title}"></title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1 th:text="#{results.h1}"></h1>
+		<h3 th:text="#{results.p1}"></h3>
+		<p th:text="#{results.p2}"></p>
+	    <form action="#" th:action="displayResults" th:object="${dataBean}" method="post">
+			<select name="constituency" th:field="*{selectedConstituency}">
+				<option th:each="item: ${dataBean.constituencies}" th:value="${item}" th:text="${item}" 
+						th:field="*{selectedConstituency}">
+				</option>
+			</select>
+			<p><input th:value="#{results.button}" type="submit"/></p>
+    	</form>
+    	<p><a th:text="#{results.link}" href="/home"></a></p>
+	</body>
+</html>

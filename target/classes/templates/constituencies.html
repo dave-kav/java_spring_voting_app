@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title th:text="#{constituencies.title}"></title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1 th:text ="#{constituencies.th}"></h1>
+		<form action="#" th:action="candidates" th:object="${dataBean}" method="post">
+			<table>
+				<tr>
+					<th th:text ="#{constituencies.th}"></th>
+				</tr>
+				<tr>
+					<td th:text ="#{constituencies.td}"></td>
+					<td class="select">
+						<select name="constituency" th:field="*{selectedConstituency}">
+							<option th:each="item: ${dataBean.constituencies}" th:value="${item}" th:text="${item}" 
+									th:field="*{selectedConstituency}">
+							</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<p><input th:value="#{constituencies.button}" type="submit"/></p>
+    	</form>
+    	<p><a th:text ="#{constituencies.link}" href="/home"></a></p>
+	</body>
+</html>
