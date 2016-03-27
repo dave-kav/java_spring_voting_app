@@ -5,7 +5,8 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
-		<h1 th:text ="#{constituencies.th}"></h1>
+		<p align="right"><a href="/home/?lang=fr">French</a> | <a href="/home/?lang=en">English</a></p>
+		<h1 th:text ="#{constituencies.h}"></h1>
 		<form action="#" th:action="candidates" th:object="${dataBean}" method="post">
 			<table>
 				<tr>
@@ -24,6 +25,6 @@
 			</table>
 			<p><input th:value="#{constituencies.button}" type="submit"/></p>
     	</form>
-    	<p><a th:text ="#{constituencies.link}" href="/home"></a></p>
+    	<p><a th:text ="#{constituencies.link}" href="/"></a></p>
 	</body>
 </html>

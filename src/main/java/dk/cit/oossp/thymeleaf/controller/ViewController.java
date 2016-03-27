@@ -98,6 +98,11 @@ public class ViewController {
 		}
 	}
 	
+	@RequestMapping(value="/candidates", method=RequestMethod.GET)
+	public String getResults(@ModelAttribute DataBean dataBean, Model model, Locale locale) {
+		return "candidates";
+	}
+	
 	@RequestMapping(value="/results", method=RequestMethod.GET)
 	public String results(@ModelAttribute DataBean dataBean, Model model, Locale locale) {
 		return "results";
@@ -107,6 +112,12 @@ public class ViewController {
 	public String displayResults(@ModelAttribute DataBean dataBean, Model model, Locale locale) {
 		ArrayList<String> elected = candidateService.getResults(dataBean.getSelectedConstituency());
 		model.addAttribute("elected", elected);
+		model.addAttribute("constituency", dataBean.getSelectedConstituency());
+		return "displayresults";
+	}
+	
+	@RequestMapping(value="/displayResults", method=RequestMethod.GET)
+	public String getDisplayResults(@ModelAttribute DataBean dataBean, Model model, Locale locale) {
 		return "displayresults";
 	}
 }

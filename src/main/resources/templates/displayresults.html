@@ -5,11 +5,12 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
+		<p align="right"><a href="/displayResults/?lang=fr">French</a> | <a href="/displayResults/?lang=en">English</a></p>
 		<h1 th:text="#{display.h1}"></h1>
-		<h3 th:text="#{display.h3}"></h3>
+		<h3 th:object="${dataBean}" th:text="#{display.h3}"></h3>
 		<ul th:object="${dataBean}">
 			<li th:each="item: ${elected}" th:text="${item}"></li>
 		</ul>
-    	<p><a th:text="#{display.link}" href="/home"></a></p>
+    	<p><a th:text="#{display.link}" href="/"></a></p>
 	</body>
 </html>
